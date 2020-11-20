@@ -462,6 +462,20 @@ var closeCursor = function (storeConfig, cursor, successCB, errorCB) {
         );
 };
 
+var resetPerfDb = function (storeConfig, soupName, successCB, errorCB) {
+    exec(SALESFORCE_MOBILE_SDK_VERSION, successCB, errorCB, SERVICE,
+        "pgResetPerfDb",
+        [{"soupName": soupName, "isGlobalStore": storeConfig.isGlobalStore, "storeName": storeConfig.storeName}]
+    );
+};
+
+var dumpPerfDb = function (storeConfig, soupName, successCB, errorCB) {
+    exec(SALESFORCE_MOBILE_SDK_VERSION, successCB, errorCB, SERVICE,
+        "pgDumpPerfDb",
+        [{"soupName": soupName, "isGlobalStore": storeConfig.isGlobalStore, "storeName": storeConfig.storeName}]
+    );
+};
+
 /**
  * Part of the module that is public
  */
@@ -506,5 +520,8 @@ module.exports = {
     QuerySpec: QuerySpec,
     SoupIndexSpec: SoupIndexSpec,
     StoreConfig: StoreConfig,
-    StoreCursor: StoreCursor
+    StoreCursor: StoreCursor,
+
+    resetPerfDb: resetPerfDb,
+    dumpPerfDb: dumpPerfDb
 };

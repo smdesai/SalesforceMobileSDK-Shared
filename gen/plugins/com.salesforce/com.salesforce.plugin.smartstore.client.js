@@ -59,6 +59,9 @@ client.removeAllGlobalStores = promiser(smartstore, "removeAllGlobalStores", "sm
 client.removeAllStores = promiser(smartstore, "removeAllStores", "smartstore.client");
 client.removeStore = promiser(smartstore, "removeStore", "smartstore.client");
 
+client.resetPerfDb = promiser(smartstore, "resetPerfDb", "smartstore.client");
+client.dumpPerfDb = promiser(smartstore, "dumpPerfDb", "smartstore.client");
+
 /**
  * Part of the module that is public
  */
