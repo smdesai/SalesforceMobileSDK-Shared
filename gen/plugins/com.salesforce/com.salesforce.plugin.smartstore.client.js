@@ -25,7 +25,7 @@
  */
 
 // Version this js was shipped with
-var SALESFORCE_MOBILE_SDK_VERSION = "8.3.0";
+var SALESFORCE_MOBILE_SDK_VERSION = "9.0.0";
 
 var smartstore = require("com.salesforce.plugin.smartstore");
 var promiser = require("com.salesforce.util.promiser").promiser;
@@ -58,6 +58,9 @@ client.getAllGlobalStores = promiser(smartstore, "getAllGlobalStores", "smartsto
 client.removeAllGlobalStores = promiser(smartstore, "removeAllGlobalStores", "smartstore.client");
 client.removeAllStores = promiser(smartstore, "removeAllStores", "smartstore.client");
 client.removeStore = promiser(smartstore, "removeStore", "smartstore.client");
+
+client.resetPerfDb = promiser(smartstore, "resetPerfDb", "smartstore.client");
+client.dumpPerfDb = promiser(smartstore, "dumpPerfDb", "smartstore.client");
 
 /**
  * Part of the module that is public
